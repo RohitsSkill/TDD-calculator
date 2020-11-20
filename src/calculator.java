@@ -1,5 +1,14 @@
 public class calculator{
 	public String data[];
+	public boolean isDigit(String str) {
+		try {
+			int num = Integer.parseInt(str);
+			return true;
+		}
+		catch(Exception e) {
+			return false;
+		}
+	}
 	public int add(String input) {
 		if(input.isEmpty()) {
 			return 0;
@@ -10,7 +19,16 @@ public class calculator{
 			}
 			else {
 				data = input.split(",");
-				return Integer.parseInt(data[0])+Integer.parseInt(data[1]);
+				int sum = 0;
+				int i=0;
+				while(i<data.length) {
+					if(isDigit(data[i])) {
+						sum += Integer.parseInt(data[i]);
+					}
+					i++;
+				}
+						
+				return sum;
 			}
 		}
 	}
