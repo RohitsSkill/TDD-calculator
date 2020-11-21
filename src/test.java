@@ -17,4 +17,7 @@ public class test {
 	public void checkMultiple() {
 		assertEquals(calculator.add("1,3,2"),6);
 	}
+	public void checkMultiple() {
+		assertEquals(calculator.add("1\n3,2"),6);
+	}
 }
