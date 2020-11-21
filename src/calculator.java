@@ -18,7 +18,7 @@ public class calculator{
 				return Integer.parseInt(input);
 			}
 			else {
-				data = input.split(",");
+				data = input.split(",|\n");
 				int sum = 0;
 				int i=0;
 				while(i<data.length) {
