@@ -9,7 +9,13 @@ public class calculator{
 			return false;
 		}
 	}
-	public int add(String input) {
+	
+	public void checkNegative(int data) throws Exception {
+		if(data<0)
+			throw new Exception("Invalid Input");
+	}
+	
+	public int add(String input) throws Exception{
 		if(input.isEmpty()) {
 			return 0;
 		}
@@ -23,7 +29,9 @@ public class calculator{
 				int i=0;
 				while(i<data.length) {
 					if(isDigit(data[i])) {
-						sum += Integer.parseInt(data[i]);
+						int num = Integer.parseInt(data[i]);
+						checkNegative(num);
+						sum += num;
 					}
 					i++;
 				}
